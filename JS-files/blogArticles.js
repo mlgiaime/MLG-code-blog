@@ -115,7 +115,7 @@ blog.rawData = [
   {
     title:       'Batman Ipsum',
     category:    'lifestyle',
-    author:      'Batman -duh',
+    author:      'Batman',
     authorUrl:   'http://www.dccomics.com/characters/batman',
     publishedOn: '2015-10-23',
     body:        '<p>My anger outweights my guilt.</p><p>You care about justice? Look beyond your own pain, Bruce.<img src="http://lorempixel.com/300/350/people/" class="pull-left"> This city is rotting.</p><p>I\'ve sewn you up, I\'ve set your bones, but I won\'t bury you. I\'ve buried enough members in the Wayne family.</p><p>But it\'s not who you are underneath... it\'s what you do that defines you.</p><p>Didn\'t you get the memo?</p><p>There is a prison in a more ancient part of the world. A pit where men are thrown to suffer and die. But sometimes a man rises from the darkness. Sometimes, the pit sends something back.</p>'
@@ -168,13 +168,5 @@ blog.rawData = [
     publishedOn: '2015-10-17',
     body:        '<p>And practical explanations. And practical explanations. And practical explanations. And practical explanations. This is a very special technique that I have never seen. And practical explanations. This is a very special technique that I have never seen. And practical explanations. In less than three weeks you can be looking at things differently, more creatively, if you. And practical explanations.</p><p><img src="http://lorempixel.com/400/200/animals/" class="pull-left">To discourage you by telling. -And Gain Power By Learning Ways To Become Peaceful. -And Gain Power By Learning Ways To Become Peaceful. The real goal of any talk or speech. To discourage you by telling. -And Gain Power By Learning Ways To Become Peaceful. The real goal of any talk or speech. To discourage you by telling. The real goal of any talk or speech. -And Gain Power By Learning Ways To Become Peaceful. -And Gain Power By Learning Ways To Become Peaceful. <img src="http://lorempixel.com/400/300/animals/" class="pull-right">The real goal of any talk or speech.</p><p>-And Gain Power By Learning Ways To Become Peaceful. Don\'t stubbornly. To discourage you by telling. To discourage you by telling. Don\'t stubbornly. Don\'t stubbornly. Space in your house How to sell faster than your neighbors How to make a strategic use. <img src="http://lorempixel.com/400/200/animals/" class="pull-left">To discourage you by telling. To discourage you by telling. Don\'t stubbornly. Don\'t stubbornly. -And Gain Power By Learning Ways To Become Peaceful. Don\'t stubbornly. Don\'t stubbornly. Don\'t stubbornly. Don\'t stubbornly. Don\'t stubbornly. To discourage you by telling. Don\'t stubbornly. Don\'t stubbornly.</p><p>-And Gain Power By Learning Ways To Become Peaceful. I m going to outline 14 different ways that I ve found you. To discourage you by telling. To discourage you by telling. To discourage you by telling. Space in your house How to sell faster than your neighbors How to make a strategic use. To discourage you by telling. To discourage you by telling. To discourage you by telling. -And Gain Power By Learning Ways To Become Peaceful. The real goal of any talk or speech. To discourage you by telling.</p><p>Then I decided to try an experiment and put all of my hard work to the test. The next morning I got up and walked straight to my computer.. And practical explanations. And practical explanations. And practical explanations. Why many people achieve very little despite spending most of their time. This is a very special technique that I have never seen. And practical explanations. Why many people achieve very little despite spending most of their time. And practical explanations.</p>'
 
-  },
-  {
-     title: 'test',
-     category: 'code',
-     author: 'your mom',
-     authorUrl: 'http://www.reddit.com/',
-     publishedOn: '2015-12-1',
-     body: '<p>This is to test that the code is working properly when adding more blog posts.</p>',
- }
+  }
 ];

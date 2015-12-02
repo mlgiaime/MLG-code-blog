@@ -16,6 +16,24 @@ body {
    padding: 10px;
 }
 
+a {
+   color: #524B8F;
+}
+
+li {
+   display: inline-block;
+   height: 42px;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: center;
+   width: 33.33%;
+   float:left;
+}
+
+.navBar a:hover {
+    background-color: #D2AFFC;
+}
+
 .blogPost {
   width: 100%;
   padding-bottom: 30px;
@@ -27,11 +45,6 @@ body {
   border-bottom: 2px solid #ABABAB;
   padding: 10px;
 }
-
-/*.post > header {
-  margin-bottom: 20px;
-  position: center;
-}*/
 
 .category {
   font-style: italic;
