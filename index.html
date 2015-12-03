@@ -6,51 +6,40 @@
   </head>
   <body name="top">
     <header>
-      <p id="headline">Melissa's Blog</p>
-      <nav name="home">
-         <ul class="navBar">
+      <p id="headline">Melissa's Blog Project</p>
+      <nav>
+        <div id="navBar">
+         <ul>
             <li><a href="#home">Home</a></li>
             <li><a name="aboutInfo" href="#about">About</a></li>
             <li><a href="https://github.com/mlgiaime/">GitHub</a></li>
          </ul>
+         <form id="category">
+          <select class="categoryChoice">
+            <option class="categoryOptions" value="Select a Category">Select a Category</options>
+          </select>
+         </form>
+         <form id="author">
+           <select class="authorChoice">
+             <option class="authorOptions" value="Select an Author">Select an Author</options>
+             <option class="authorOptions" value="wat">wat</options>
+          </select>
+         </form>
+        </div>
       </nav>
-      <select id="authorDrop" >
-         <option value="nothing">Select an Author</option>
-         <option value="Kevin Bacon">Kevin Bacon</option>
-         <option value="Felix Hernandez">Felix Hernandez</option>
-         <option value="Meow Meow">Meow Meow</option>
-         <option value="El Rey de Queso">El Rey de Queso</option>
-         <option value="Andy Sack">Andy Sack</option>
-         <option value="Carl Sagan">Carl Sagan</option>
-         <option value="The Dread Pirate Roberts">The Dread Pirate Roberts</option>
-         <option value="Betty Crocker">Betty Crocker</option>
-         <option value="Macklemore">Macklemore</option>
-         <option value="Rocko">Rocko</option>
-         <option value="Ashley Wagner">Ashley Wagner</option>
-         <option value="Milton Williams Cooper">Milton Williams Cooper</option>
-         <option value="Barack Obama">Barack Obama</option>
-         <option value="Zatarans">Zatarans</option>
-         <option value="Batman">Batman</option>
-         <option value="Ryan Gosling">Ryan Gosling</option>
-         <option value="Heisenburg">Heisenburg</option>
-         <option value="The Doctor">The Doctor</option>
-         <option value="The Greater Good">The Greater Good</option>
-         <option value="Michael Scott">Michael Scott</option>
-         <option value="Horse Whisperer">Horse Whisperer</option>
-       </select>
    </header>
-
-    <main>
-      <article class="blogPost">
-         <h2 class="blogTitle"></h2>
+   <main>
+      <article class="blogPost" id="template">
+         <h2 class="title"></h2>
          <p class="category"></p>
          <a class="author"></a>
-         <p class="publishDate"></p>
-         <section class="blogBody"></section>
+         <p class="publishedOn"></p>
+         <div class="blogBody"></div>
       </article>
     </main>
-    <section>
-    <a href="#top">Return to top</a>
+
+
+    <a href="#top" id="topReturn">Return to top</a>
     <footer><em>An MLG production -- Autumn 2015</em></footer>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="JS-files/blogArticles.js"></script>
