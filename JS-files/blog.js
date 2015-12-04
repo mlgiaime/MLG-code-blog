@@ -142,7 +142,7 @@ hideArticles = function() {
   });
 };
 
-renderPage();
+
 
 
 $('.authorChoice').change(function() {
@@ -158,5 +158,17 @@ $('.categoryChoice').change(function() {
   clearBlogPosts();
   renderPage();
 });
-
+renderPage();
 hideArticles();
+
+$('#aboutTab').click(function(event) {
+  event.preventDefault();
+  $('.tab1').hide();
+  $('.tab2').show();
+});
+
+$('#homeTab').click(function(event) {
+  event.preventDefault();
+  $('.tab2').hide();
+  $('.tab1').show();
+});
