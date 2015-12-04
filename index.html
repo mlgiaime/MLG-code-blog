@@ -14,17 +14,18 @@
             <li><a name="aboutInfo" href="#about">About</a></li>
             <li><a href="https://github.com/mlgiaime/">GitHub</a></li>
          </ul>
-         <form id="category">
-          <select class="categoryChoice">
-            <option class="categoryOptions" value="Select a Category">Select a Category</options>
+         <section id="dropDownList">
+           <form id="category">
+           <select class="categoryChoice">
+            <option id="categoryOption" class="categorySelection" value="Select a Category">Select a Category</options>
           </select>
          </form>
          <form id="author">
            <select class="authorChoice">
-             <option class="authorOptions" value="Select an Author">Select an Author</options>
-             <option class="authorOptions" value="wat">wat</options>
+             <option id="authorOption" class="authorSelection" value="Select an Author">Select an Author</options>
           </select>
          </form>
+        </section>
         </div>
       </nav>
    </header>
@@ -33,12 +34,11 @@
          <h2 class="title"></h2>
          <p class="category"></p>
          <a class="author"></a>
-         <p class="publishedOn"></p>
-         <div class="blogBody"></div>
+         <!-- <p class="publishedOn"></p> -->
+         <p class="daysSince"></p>
+         <div class="blogBody" class="read-on"></div>
       </article>
     </main>
-
-
     <a href="#top" id="topReturn">Return to top</a>
     <footer><em>An MLG production -- Autumn 2015</em></footer>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
