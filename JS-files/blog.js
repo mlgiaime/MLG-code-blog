@@ -4,11 +4,8 @@ var Article = function(property) {
   this.authorUrl = property.authorUrl;
   this.category = property.category;
   this.blogBody = property.body;
-  // this.publishedOn = property.publishedOn;
   this.daysSince = property.daysSince;
-  //this.authorChoice = property.author;
-  //this.categoryChoice = property.category;
-  // console.log('creating new article');
+
 };
 
 Article.prototype.toHTML = function() {
@@ -19,23 +16,10 @@ Article.prototype.toHTML = function() {
   $articleTemplate.find('.author').html('<a href="' + this.authorUrl + '">' + this.author + '</a>');
   $articleTemplate.find('.category').html(this.category);
   $articleTemplate.find('.blogBody').html(this.blogBody);
-  // $articleTemplate.find('.publishedOn').html(this.publishedOn);
   $articleTemplate.find('.daysSince').html('Published ' + this.daysSince + ' days ago');
   $('main').append($articleTemplate);
   $('#template').hide();
   this.filterDatatoHTML();
-  // var $choiceTemplate1 = $('#categoryTemplate').clone();
-  // var $choiceTemplate2 = $('#authorTemplate').clone();
-  // $choiceTemplate1.attr(this.categoryChoice);
-  // $choiceTemplate2.attr(this.authorChoice);
-  // $choiceTemplate1.attr('id','clone');
-  // $choiceTemplate2.attr('id','clone');
-  // console.log('template1=' + $choiceTemplate1);
-  // console.log('template2=' + $choiceTemplate2);
-  // $('select').append($choiceTemplate1);
-  // $('select').append($choiceTemplate2);
-  // console.log('Adding an article to the page');
-
 };
 
 var prepData = function() {
@@ -57,11 +41,10 @@ var renderPage = function(firstTime) {
   filteredData = filterData(filteredData,chosenAuthor,chosenCategory);
   for (i=0;i<filteredData.length;i++) {
     var article1 = new Article(filteredData[i]);
-    // console.log('between new article and .tohtml');
     article1.toHTML();
     delete article1;
   };
-  // console.log('calling renderPage');
+
 };
 
 var filterData = function(blogData,chosenAuthor,chosenCategory) {
@@ -81,9 +64,6 @@ var filterData = function(blogData,chosenAuthor,chosenCategory) {
     });
   }
 
-
-
-  // console.log('calling filterData');
   return filterArray;
 };
 
@@ -102,34 +82,12 @@ Article.prototype.filterDatatoHTML = function() {
   if ($('.authorChoice').find('option[value="' + this.author + '"]').length === 0) {
     $('.authorChoice').append($authorChoice);
   }
-  // console.log('doing filterDatatoHTML');
+
 };
 
 var getData = function() {
   return blog.rawData;
 };
-
-// var checkForDuplicateAuthors = function(authorNameArray,authorName) {
-//   var found = false;
-//   for(var i = 0; i < authorNameArray.length; i++) {
-//     if (authorNameArray[i] == authorName){
-//       found = true;
-//       break;
-//     }
-//   }
-//   return found;
-// };
-//
-// var getAuthorNames = function(data) {
-//   var authorNameArray = [];
-//   for (i=0;i<data.rawData.length;i++) {
-//     if(checkForDuplicateAuthors(data.rawData[i].author) === false) {
-//       authorNameArray.push(data.rawData[i].author);
-//     }
-//   }
-//   return authorNameArray;
-// };
-
 
 var getCategoryChoice = function(data) {
   var categoryOptions = [];
@@ -166,26 +124,6 @@ var sortByDate = function(data) {
   return data;
 };
 
-// blog.truncateArticles = function() {
-//   $('Article.blogPost p:not(:first-child)').hide();
-//   $('main').on('click', '.read-on', function(event) {
-//     event.preventDefault();
-//     $('main').parent().find('p:not(:first-child)').show();
-//     console.log('this happened');
-//   });
-// };
-// $(function() {
-//   blog.truncateArticles();
-//   $('.blogBody').hide();
-//   $('select[id="categoryOption"]').change(function() {
-//     $('.author').find('option:first').attr('selected', 'selected');
-//     $('main').find('article').show();
-//     if ($(this).val() !== 'none') {
-//       $('.categorySelection:not(:contains(' + $(this).val() + '))').parent().hide();
-//     }
-//   });
-// });
-
 var clearBlogPosts = function(){
   var existingPosts = $('.blogPost');
   for (i=0;i<existingPosts.length;i++){
@@ -195,7 +133,17 @@ var clearBlogPosts = function(){
   }
 };
 
-renderPage();
+hideArticles = function() {
+  $('article p:not(:first-child)').hide();
+  $('article').on('click', '.read-on', function(event) {
+    event.preventDefault();
+    $(this).parent().find('p').fadeIn();
+    $(this).hide();
+  });
+};
+
+
+
 
 $('.authorChoice').change(function() {
   var chosenCategory = $('.categoryChoice');
@@ -209,4 +157,18 @@ $('.categoryChoice').change(function() {
   $(chosenAuthor).val('Select an Author');
   clearBlogPosts();
   renderPage();
+});
+renderPage();
+hideArticles();
+
+$('#aboutTab').click(function(event) {
+  event.preventDefault();
+  $('.tab1').hide();
+  $('.tab2').show();
+});
+
+$('#homeTab').click(function(event) {
+  event.preventDefault();
+  $('.tab2').hide();
+  $('.tab1').show();
 });
