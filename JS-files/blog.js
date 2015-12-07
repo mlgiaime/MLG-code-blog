@@ -1,3 +1,4 @@
+//object constructor
 var Article = function(property) {
   this.title = property.title;
   this.author = property.author;
@@ -5,19 +6,15 @@ var Article = function(property) {
   this.category = property.category;
   this.blogBody = property.body;
   this.daysSince = property.daysSince;
-
 };
-
+//
 Article.prototype.toHTML = function() {
   $('#template').show();
   var $articleTemplate = $('#template').clone();
   $articleTemplate.removeAttr('id');
-  $articleTemplate.find('.title').html(this.title);
-  $articleTemplate.find('.author').html('<a href="' + this.authorUrl + '">' + this.author + '</a>');
-  $articleTemplate.find('.category').html(this.category);
-  $articleTemplate.find('.blogBody').html(this.blogBody);
-  $articleTemplate.find('.daysSince').html('Published ' + this.daysSince + ' days ago');
-  $('main').append($articleTemplate);
+  var compiledTemplate = Handlebars.compile($articleTemplate.html());
+  var html = compiledTemplate(this);
+  $('main').append(html);
   $('#template').hide();
   this.filterDatatoHTML();
 };
@@ -37,14 +34,12 @@ var renderPage = function(firstTime) {
   var filteredData = prepData();
   var chosenAuthor = $('.authorChoice').val();
   var chosenCategory = $('.categoryChoice').val();
-
   filteredData = filterData(filteredData,chosenAuthor,chosenCategory);
   for (i=0;i<filteredData.length;i++) {
     var article1 = new Article(filteredData[i]);
     article1.toHTML();
     delete article1;
   };
-
 };
 
 var filterData = function(blogData,chosenAuthor,chosenCategory) {
@@ -63,7 +58,6 @@ var filterData = function(blogData,chosenAuthor,chosenCategory) {
       return post.author === chosenAuthor;
     });
   }
-
   return filterArray;
 };
 
@@ -82,7 +76,6 @@ Article.prototype.filterDatatoHTML = function() {
   if ($('.authorChoice').find('option[value="' + this.author + '"]').length === 0) {
     $('.authorChoice').append($authorChoice);
   }
-
 };
 
 var getData = function() {
@@ -103,6 +96,7 @@ var stringToDate = function(data) {
   });
   return data;
 };
+
 var calculateDaysSince = function(data) {
   var data = data.map(function(dataItem) {
     var today = new Date();
@@ -141,9 +135,6 @@ hideArticles = function() {
     $(this).hide();
   });
 };
-
-
-
 
 $('.authorChoice').change(function() {
   var chosenCategory = $('.categoryChoice');
