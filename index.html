@@ -2,7 +2,21 @@
 <html>
   <head>
     <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/base.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/stylesheet.css">
+    <script id="template" type="text/x-handlebars-template">
+     <article class="blogPost" id="template">
+        <h2 class="title">{{title}}</h2>
+        <div class="category">{{category}}</div>
+        <a class="author" href="{{authorUrl}}">{{author}}</a>
+        <div class="daysSince">Published {{daysSince}} days ago</div>
+        <div class="blogBody">{{{blogBody}}}</div>
+        <a href="#" class="read-on">Read More</a>
+     </article>
+   </script>
   </head>
   <body name="top">
     <header>
@@ -31,16 +45,7 @@
       </nav>
    </header>
    <main class="tab1">
-     <script id="template" type="text/x-handlebars-template">
-      <article class="blogPost" id="template">
-         <h2 class="title">{{title}}</h2>
-         <div class="category">{{category}}</div>
-         <a class="author" href="{{authorUrl}}">{{author}}</a>
-         <div class="daysSince">Published {{daysSince}} days ago</div>
-         <div class="blogBody">{{{blogBody}}}</div>
-         <a href="#" class="read-on">Read More</a>
-      </article>
-    </script>
+     <section id="blogArticles"></section>
     </main>
     </div>
     <div class="tab2">your mom</div>

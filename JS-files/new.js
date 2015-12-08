@@ -1,5 +1,4 @@
 $(function() {
-
   $('#new-article').submit(function(event) {
     event.preventDefault();
     var input = new Article({
@@ -11,6 +10,4 @@ $(function() {
     });
     var inputHTML = input.toHTML();
   });
-
-
 });

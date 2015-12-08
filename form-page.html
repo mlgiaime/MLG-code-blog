@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog Entries</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <script id="template" type="text/x-handlebars-template">
       <article class="blogPost" id="template">
         <h2 class="title">{{title}}</h2>
         <div class="category">{{category}}</div>
-        <a class="author" href="{{authorUrl}}">{{author}}</a>
+        <div><a class="author" href="{{authorUrl}}">{{author}}</a></div>
         <div class="blogBody">{{{blogBody}}}</div>
      </article>
    </script>
@@ -21,10 +26,10 @@
         <h1>Write a New Blog Post</h1>
       </section>
       <nav class="main-nav">
-        <ul>
+        <!-- <ul>
           <li class="tab" data-content="write"><a href="#" class="icon-home">Write</a></li>
           <li class="tab" data-content="articles"><a href="#" class="icon-home">Preview</a></li>
-        </ul>
+        </ul> -->
       </nav>
     </header>
     <main>
@@ -50,11 +55,11 @@
       <section id="article-preview" class="blogPreview">
         <!-- Preview will load here based on the above template-->
       </section>
-      <section id="article-export">
+      <!-- <section id="article-export">
         <label id="export-field" for="article-json" class="pull-right">
           <input type="text" readonly id="article-json">
         </label>
-      </section>
+      </section> -->
     </main>
     <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -62,7 +67,5 @@
     <script src="JS-files/blogArticles.js"></script>
     <script src="JS-files/new.js"></script>
     <script src="JS-files/blog.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
   </body>
 </html>

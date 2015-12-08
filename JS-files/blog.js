@@ -1,4 +1,3 @@
-//object constructor
 var Article = function(property) {
   this.title = property.title;
   this.author = property.author;
@@ -7,7 +6,7 @@ var Article = function(property) {
   this.blogBody = property.body;
   this.daysSince = property.daysSince;
 };
-//
+
 Article.prototype.toHTML = function() {
   $('#template').show();
   var $articleTemplate = $('#template').clone();
@@ -30,19 +29,19 @@ var prepData = function() {
   return data;
 };
 
-var renderPage = function(firstTime) {
+var renderPage = function() {
   var filteredData = prepData();
   var chosenAuthor = $('.authorChoice').val();
   var chosenCategory = $('.categoryChoice').val();
-  filteredData = filterData(filteredData,chosenAuthor,chosenCategory);
-  for (i=0;i<filteredData.length;i++) {
+  filteredData = filterData(filteredData, chosenAuthor, chosenCategory);
+  for (i = 0; i < filteredData.length; i++) {
     var article1 = new Article(filteredData[i]);
     article1.toHTML();
     delete article1;
   };
 };
 
-var filterData = function(blogData,chosenAuthor,chosenCategory) {
+var filterData = function(blogData, chosenAuthor, chosenCategory) {
   var filterArray = [];
   if (chosenAuthor == 'Select an Author') {
     filterArray = blogData;
@@ -84,7 +83,7 @@ var getData = function() {
 
 var getCategoryChoice = function(data) {
   var categoryOptions = [];
-  for (i=0;i<data.rawData.length;i++) {
+  for (i = 0; i < data.rawData.length; i++) {
     return categoryOptions;
   }
 };
@@ -107,6 +106,7 @@ var calculateDaysSince = function(data) {
   });
   return data;
 };
+
 var sortByDate = function(data) {
   var data = data.sort(function(a, b) {
     if (a.publishedOn < b.publishedOn)
@@ -120,14 +120,14 @@ var sortByDate = function(data) {
 
 var clearBlogPosts = function(){
   var existingPosts = $('.blogPost');
-  for (i=0;i<existingPosts.length;i++){
-    if ($(existingPosts[i]).attr('id') !=='template'){
-      $(existingPosts[i]).remove();
-    }
+  for (i = 0; i < existingPosts.length; i++){
+    // if ($(existingPosts[i]).attr('id') !=='template'){
+    $(existingPosts[i]).remove();
+    // }
   }
 };
 
-hideArticles = function() {
+var hideArticles = function() {
   $('article p:not(:first-child)').hide();
   $('article').on('click', '.read-on', function(event) {
     event.preventDefault();
@@ -149,8 +149,9 @@ $('.categoryChoice').change(function() {
   clearBlogPosts();
   renderPage();
 });
-renderPage();
-hideArticles();
+
+renderPage(hideArticles());
+
 
 $('#aboutTab').click(function(event) {
   event.preventDefault();
