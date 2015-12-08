@@ -4,8 +4,8 @@
     <title>Blog</title>
     <link rel="stylesheet" type="text/css" href="css-styling/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css-styling/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
     <link rel="stylesheet" type="text/css" href="css-styling/menu.css">
+    <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
     <link rel="stylesheet" type="text/css" href="css-styling/stylesheet.css">
     <script id="template" type="text/x-handlebars-template">
      <article class="blogPost" id="template">
@@ -16,19 +16,19 @@
         <div class="blogBody">{{{blogBody}}}</div>
         <a href="#" class="read-on">Read More</a>
      </article>
-   </script>
+    </script>
   </head>
   <body name="top">
     <ul class="navigation">
-    <li class="nav-item"><a href="#home">Home</a></li>
-    <li class="nav-item"><a name="aboutInfo" href="#about">About</a></li>
-    <li class="nav-item"><a href="https://github.com/mlgiaime/">GitHub</a></li>
+      <li class="nav-item"><a href="#home">Home</a></li>
+      <li class="nav-item"><a id="aboutTab" href="#aboutTab">About</a></li>
+      <li class="nav-item"><a href="https://github.com/mlgiaime/">GitHub</a></li>
     </ul>
     <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
     <label for="nav-trigger"></label>
-<div class="site-wrap">
+    <div class="site-wrap">
   <header>
-    <p id="headline">Melissa's Blog Project</p>
+    <h1 id="headline">Melissa's Blog Project</h1>
      <div class="tab1">
      <section id="dropDownList">
        <form id="category">
@@ -45,10 +45,10 @@
     </div>
    </header>
    <main class="tab1">
-     <section id="blogArticles"></section>
+    <section id="blogArticles"></section>
     </main>
     </div>
-    <div class="tab2">your mom</div>
+    <div class="tab2">This page was made by someone who does not get along with CSS.<img src="bill.gif"></div>
     <a href="#top" id="topReturn">Return to top</a>
     <footer><em>An MLG production -- Autumn 2015</em></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
