@@ -38,10 +38,10 @@ a {
   font-size: 18px;
 }
 
-/*img {
-  float: left;
-  margin: 30px 30px 30px 0px;
-}*/
+img {
+    width: 100%;
+    height: auto;
+}
 
 footer {
    text-align: center;
