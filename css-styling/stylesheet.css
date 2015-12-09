@@ -1,6 +1,12 @@
+#dropDownList > form {
+  display: inline-block;
+}
+
+#dropDownList {
+  text-align: center;
+}
+
 body {
-  width: 70%;
-  margin: 10px auto;
   background-color: #E3DCFF;
 }
 

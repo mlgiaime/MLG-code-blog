@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="css-styling/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="css-styling/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css-styling/menu.css">
-    <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
-    <link rel="stylesheet" type="text/css" href="css-styling/stylesheet.css">
-    <script id="template" type="text/x-handlebars-template">
-     <article class="blogPost" id="template">
-        <h2 class="title">{{title}}</h2>
-        <div class="category">{{category}}</div>
-        <a class="author" href="{{authorUrl}}">{{author}}</a>
-        <div class="daysSince">Published {{daysSince}} days ago</div>
-        <div class="blogBody">{{{blogBody}}}</div>
-        <a href="#" class="read-on">Read More</a>
-     </article>
-    </script>
-  </head>
-  <body name="top">
-    <ul class="navigation">
-      <li class="nav-item"><a href="#home">Home</a></li>
-      <li class="nav-item"><a id="aboutTab" href="#aboutTab">About</a></li>
-      <li class="nav-item"><a href="https://github.com/mlgiaime/">GitHub</a></li>
-    </ul>
-    <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
-    <label for="nav-trigger"></label>
-    <div class="site-wrap">
-  <header>
-    <h1 id="headline">Melissa's Blog Project</h1>
-     <div class="tab1">
-     <section id="dropDownList">
-       <form id="category">
-       <select class="categoryChoice">
-        <option id="categoryOption" class="categorySelection" value="Select a Category">Select a Category</options>
-      </select>
-     </form>
-     <form id="author">
-      <select class="authorChoice">
-        <option id="authorOption" class="authorSelection" value="Select an Author">Select an Author</options>
-      </select>
-     </form>
-    </section>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog</title>
+  <link rel="stylesheet" type="text/css" href="css-styling/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css-styling/normalize.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css-styling/menu.css"> -->
+  <link rel="stylesheet" type="text/css" href="css-styling/icons.css">
+  <link rel="stylesheet" type="text/css" href="css-styling/stylesheet.css">
+  <script id="template" type="text/x-handlebars-template">
+    <article class="blogPost" id="template">
+      <h2 class="title">{{title}}</h2>
+      <div class="category">{{category}}</div>
+      <a class="author" href="{{authorUrl}}">{{author}}</a>
+      <div class="daysSince">Published {{daysSince}} days ago</div>
+      <div class="blogBody">{{{blogBody}}}</div>
+      <a href="#" class="read-on">Read More</a>
+    </article>
+  </script>
+</head>
+
+<body name="top">
+  <ul class="navigation">
+    <li class="nav-item"><a href="#home">Home</a></li>
+    <li class="nav-item"><a id="aboutTab" href="#aboutTab">About</a></li>
+    <li class="nav-item"><a href="https://github.com/mlgiaime/">GitHub</a></li>
+  </ul>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger"></label>
+  <div class="site-wrap">
+    <div class="container">
+      <header>
+        <div class="row">
+          <h1 id="headline" class="twelve columns">Melissa's Blog Project</h1>
+        </div>
+        <div class="tab1 row">
+          <section class="twelve columns" id="dropDownList">
+            <form id="category">
+              <select class="categoryChoice">
+                <option id="categoryOption" class="categorySelection" value="Select a Category">Select a Category</options>
+              </select>
+            </form>
+            <form id="author">
+              <select class="authorChoice">
+                <option id="authorOption" class="authorSelection" value="Select an Author">Select an Author</options>
+              </select>
+            </form>
+          </section>
+        </div>
+      </header>
+      <main class="tab1 row">
+        <section class="twelve columns" id="blogArticles"></section>
+      </main>
+
+      <div class="tab2">This page was made by someone who does not get along with CSS.
+        <img src="bill.gif">
+      </div>
+      <a href="#top" id="topReturn">Return to top</a>
+      <footer>
+        <em>An MLG production -- Autumn 2015</em>
+      </footer>
     </div>
-   </header>
-   <main class="tab1">
-    <section id="blogArticles"></section>
-    </main>
-    </div>
-    <div class="tab2">This page was made by someone who does not get along with CSS.<img src="bill.gif"></div>
-    <a href="#top" id="topReturn">Return to top</a>
-    <footer><em>An MLG production -- Autumn 2015</em></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="JS-files/blogArticles.js"></script>
-    <script src="JS-files/blog.js"></script>
-  </body>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="JS-files/blogArticles.js"></script>
+  <script src="JS-files/blog.js"></script>
+</body>
 </div>
+
 </html>
