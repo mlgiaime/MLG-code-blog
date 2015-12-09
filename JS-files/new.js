@@ -6,8 +6,13 @@ $(function() {
       category: $('#article-category').val(),
       author: $('#author').val(),
       authorUrl: $('#article-author-url').val(),
+      daysSince: $('#date').val(),
       body: marked($('#blogBody').val())
     });
-    var inputHTML = input.toHTML();
+
+    input.toHTML();
+
+    var json = input.toJSON();
+    $('#article-json').val(json.replace(/"/g, "\'"));
   });
 });
