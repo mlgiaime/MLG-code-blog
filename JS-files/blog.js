@@ -7,6 +7,7 @@ var Article = function(property) {
   this.daysSince = property.daysSince;
 };
 
+
 Article.prototype.toHTML = function() {
   $('#template').show();
   var $articleTemplate = $('#template').clone();
@@ -92,7 +93,9 @@ Article.prototype.filterDatatoHTML = function() {
 
 var getData = function() {
   return blog.rawData;
+  //return (myLocalStorage.get('blogData'));
 };
+
 
 var getCategoryChoice = function(data) {
   var categoryOptions = [];
@@ -131,13 +134,13 @@ var sortByDate = function(data) {
   return data;
 };
 
-var clearBlogPosts = function(){
+var clearBlogPosts = function() {
   var existingPosts = $('.blogPost');
-  for (i = 0; i < existingPosts.length; i++){
+  for (i = 0; i < existingPosts.length; i++) {
     $(existingPosts[i]).remove();
   }
 };
-
+//add in function to turn the read-on link into a read-less link that re-truncates the articles
 var hideArticles = function() {
   $('article p:not(:first-child)').hide();
   $('article').on('click', '.read-on', function(event) {
@@ -162,7 +165,6 @@ $('.categoryChoice').change(function() {
 });
 
 renderPage();
-
 
 $('#aboutTab').click(function(event) {
   event.preventDefault();
