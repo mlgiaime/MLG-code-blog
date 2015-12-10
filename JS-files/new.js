@@ -13,6 +13,6 @@ $(function() {
     input.toHTML();
 
     var json = input.toJSON();
-    $('#article-json').val(json.replace(/"/g, "\'"));
+    $('#article-json').val(json);
   });
 });

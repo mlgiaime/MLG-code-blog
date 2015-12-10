@@ -7,6 +7,7 @@ var Article = function(property) {
   this.daysSince = property.daysSince;
 };
 
+var dynamicData = [];
 
 Article.prototype.toHTML = function() {
   $('#template').show();
@@ -32,7 +33,8 @@ Article.prototype.toJSON = function() {
 };
 
 var prepData = function() {
-  var data = getData();
+  var data = dynamicData[0];
+  console.log('data in prepdata = ' + data);
   data = stringToDate(data);
   data = calculateDaysSince(data);
   data = sortByDate(data);
@@ -91,8 +93,32 @@ Article.prototype.filterDatatoHTML = function() {
   }
 };
 
+var myLocalStorage = {};
+myLocalStorage.get = function(name) {
+  console.log('name = ' + name);
+  console.log('the thing in localStorage with name =' + localStorage.getItem(name) );
+  return JSON.parse(localStorage.getItem(name));
+};
+myLocalStorage.set = function(name, input) {
+  localStorage.setItem(name, JSON.stringify(input));
+  console.log('breakpoints');
+};
+
 var getData = function() {
-  return blog.rawData;
+  //return blog.rawData;
+  var articleData;
+  $.ajax('JS-files/blogData.json', {
+    success: function(data) {
+      //console.log(data);
+      articleData = data;
+      //console.log('articledata = ' + articleData);
+      myLocalStorage.set('blogData', articleData);
+      console.log('get on blogData = ' + myLocalStorage.get('blogData'));
+      dynamicData.push(myLocalStorage.get('blogData'));
+      renderPage();
+    }
+  });
+
   //return (myLocalStorage.get('blogData'));
 };
 
@@ -164,7 +190,9 @@ $('.categoryChoice').change(function() {
   renderPage();
 });
 
-renderPage();
+//renderPage();
+
+getData();
 
 $('#aboutTab').click(function(event) {
   event.preventDefault();
