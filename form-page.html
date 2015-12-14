@@ -40,7 +40,6 @@
           <label>
             <input type="text" id="blogTitle" placeholder="Article title" required>
           </label>
-          <code><textarea id="blogBody" rows="8" cols="40" required></textarea></code>
           <label>
             <input type="text" id="author" placeholder="Author Name" required>
           </label>
@@ -50,17 +49,20 @@
           <label>
             <input type="text" id="article-category" placeholder="Category" required>
           </label>
+          <code><textarea id="blogBody" rows="8" cols="40" required></textarea></code>
+          <label>
+            <input type="text" id="date" placeholder="yyyy-mm-dd" required>
+          </label>
           <input type="submit" id="submit" placeholder="Submit">
         </form>
       </section>
       <section id="article-preview" class="blogPreview">
-        <!-- Preview will load here based on the above template-->
       </section>
-      <!-- <section id="article-export">
+      <section id="article-export">
         <label id="export-field" for="article-json" class="pull-right">
           <input type="text" readonly id="article-json">
         </label>
-      </section> -->
+      </section>
     </main>
     <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

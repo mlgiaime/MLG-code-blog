@@ -1,5 +1,6 @@
 var blog = {};
 blog.rawData = [
+  {'title':'HGOYG','author':'OIUG','authorUrl':'OIUG','category':'OIUG','blogBody':'<p>OIUGIIIIII</p>\n','publishedOn':'2013-02-24'},
   {
     title:       'Bacon Ipsum',
     category:    'food',

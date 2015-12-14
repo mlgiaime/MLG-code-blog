@@ -1,7 +1,19 @@
-body {
-  width: 70%;
-  margin: 10px auto;
+.site-wrap {
+  position: relative;
   background-color: #E3DCFF;
+  left: 0px;
+}
+
+#dropDownList > form {
+  display: inline-block;
+}
+
+#dropDownList {
+  text-align: center;
+}
+
+body {
+  background-color: gray;
 }
 
 #headline {
@@ -17,9 +29,10 @@ body {
    padding: 10px;
 }
 
-a {
+/*cannot use 'a' tag to target within browser. The default has a hold. Must target parent:child
+/*a {
    color: #524B8F;
-}
+}*/
 
 .blogPost {
   width: 100%;

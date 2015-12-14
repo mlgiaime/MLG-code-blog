@@ -18,6 +18,18 @@ Article.prototype.toHTML = function() {
   this.filterDatatoHTML();
 };
 
+Article.prototype.toJSON = function() {
+  var newPost = {
+    title: this.title,
+    author: this.author,
+    authorUrl: this.authorUrl,
+    category: this.category,
+    blogBody: this.blogBody,
+    publishedOn: this.daysSince
+  };
+  return JSON.stringify(newPost);
+};
+
 var prepData = function() {
   var data = getData();
   data = stringToDate(data);
@@ -39,6 +51,7 @@ var renderPage = function() {
     article1.toHTML();
     delete article1;
   };
+  hideArticles();
 };
 
 var filterData = function(blogData, chosenAuthor, chosenCategory) {
@@ -121,9 +134,7 @@ var sortByDate = function(data) {
 var clearBlogPosts = function(){
   var existingPosts = $('.blogPost');
   for (i = 0; i < existingPosts.length; i++){
-    // if ($(existingPosts[i]).attr('id') !=='template'){
     $(existingPosts[i]).remove();
-    // }
   }
 };
 
@@ -150,7 +161,7 @@ $('.categoryChoice').change(function() {
   renderPage();
 });
 
-renderPage(hideArticles());
+renderPage();
 
 
 $('#aboutTab').click(function(event) {
