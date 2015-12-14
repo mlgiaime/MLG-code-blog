@@ -109,16 +109,13 @@ var getData = function() {
   var articleData;
   $.ajax('JS-files/blogData.json', {
     success: function(data) {
-      //console.log(data);
       articleData = data;
-      //console.log('articledata = ' + articleData);
       myLocalStorage.set('blogData', articleData);
       console.log('get on blogData = ' + myLocalStorage.get('blogData'));
       dynamicData.push(myLocalStorage.get('blogData'));
       renderPage();
     }
   });
-
   //return (myLocalStorage.get('blogData'));
 };
 

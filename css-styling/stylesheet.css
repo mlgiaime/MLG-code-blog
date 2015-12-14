@@ -1,6 +1,6 @@
 .site-wrap {
   position: relative;
-  background-color: #E3DCFF;
+  background-color: #6E8EFF;
   left: 0px;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .blogPost {
-  width: 100%;
+  width: 90%;
   padding-bottom: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
